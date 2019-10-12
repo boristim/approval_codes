@@ -1,3 +1,4 @@
+Task conditions see in Approval codes.pdf
 
 Full informaition see here
 https://docs.google.com/document/d/1YA-PBnmGSm2q3C6XsZxI2aWl0XosNX0YfL_seT2hDFU/edit?usp=sharing
