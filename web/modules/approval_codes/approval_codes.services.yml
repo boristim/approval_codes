@@ -1,0 +1,3 @@
+services:
+  approval_codes.getcode:
+    class: Drupal\approval_codes\GetCode

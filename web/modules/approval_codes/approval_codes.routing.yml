@@ -1,0 +1,7 @@
+approval_codes.settings_form:
+  path: '/admin/config/system/approval-codes'
+  defaults:
+    _title: 'Approval codes settings'
+    _form: 'Drupal\approval_codes\Form\SettingsForm'
+  requirements:
+    _permission: 'administer approval_codes configuration'

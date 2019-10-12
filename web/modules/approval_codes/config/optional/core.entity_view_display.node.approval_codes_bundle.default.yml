@@ -1,0 +1,46 @@
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.field.node.approval_codes_bundle.field_code
+    - field.field.node.approval_codes_bundle.field_code_level
+    - field.field.node.approval_codes_bundle.field_content_type
+    - node.type.approval_codes_bundle
+  module:
+    - options
+    - user
+id: node.approval_codes_bundle.default
+targetEntityType: node
+bundle: approval_codes_bundle
+mode: default
+content:
+  field_code:
+    weight: 0
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_code_level:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_content_type:
+    weight: 1
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

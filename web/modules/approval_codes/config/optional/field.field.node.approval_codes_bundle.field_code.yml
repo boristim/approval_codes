@@ -1,0 +1,18 @@
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_code
+    - node.type.approval_codes_bundle
+id: node.approval_codes_bundle.field_code
+field_name: field_code
+entity_type: node
+bundle: approval_codes_bundle
+label: Code
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

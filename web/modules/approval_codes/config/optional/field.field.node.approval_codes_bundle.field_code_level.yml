@@ -1,0 +1,22 @@
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_code_level
+    - node.type.approval_codes_bundle
+  module:
+    - options
+id: node.approval_codes_bundle.field_code_level
+field_name: field_code_level
+entity_type: node
+bundle: approval_codes_bundle
+label: 'Code level'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '1'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

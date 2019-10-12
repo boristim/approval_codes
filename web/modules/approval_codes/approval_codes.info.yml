@@ -1,0 +1,7 @@
+name: 'Approval codes'
+type: module
+description: 'The description.'
+package: Custom
+core: 8.x
+dependencies:
+  - menu_ui

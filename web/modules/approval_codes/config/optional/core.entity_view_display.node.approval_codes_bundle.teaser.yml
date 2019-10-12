@@ -1,0 +1,22 @@
+langcode: ru
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.approval_codes_bundle.field_code
+    - field.field.node.approval_codes_bundle.field_content_type
+    - node.type.approval_codes_bundle
+  module:
+    - user
+id: node.approval_codes_bundle.teaser
+targetEntityType: node
+bundle: approval_codes_bundle
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_code: true
+  field_content_type: true
+  langcode: true

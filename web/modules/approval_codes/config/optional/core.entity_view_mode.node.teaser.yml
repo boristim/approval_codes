@@ -1,0 +1,9 @@
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser
+label: Анонс
+targetEntityType: node
+cache: true

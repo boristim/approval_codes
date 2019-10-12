@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Approval codes module.
+ *
+ * @DCG
+ * This file is no longer required in Drupal 8.
+ * @see https://www.drupal.org/node/2217931
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityFormInterface;
+/**
+ * Implements hook_form_alter().
+ */
+function approval_codes_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  //    dpm(__FUNCTION__);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function approval_codes_form_node_approval_codes_bundle_edit_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['#validate'][] = '_approval_codes_form_node_approval_codes_bundle_form_validate';
+}
+
+function _approval_codes_form_node_approval_codes_bundle_form_validate(array &$form, FormStateInterface $form_state) {
+  $field_code = $form_state->getValue('field_code')[0]['value'];
+  if (!preg_match('/^[A-Z]{4}\.([A-Z]{2,4}|\d{2,4})\.([A-Z]{2,4}|\d{2,4})\.([A-Z]{2,4}|\d{2,4})\.\d{4}$/', $field_code)) {
+    $form_state->setErrorByName('field_code', t("Invalid format for code"));
+  }
+//  $form_state->values['op']
+  $nid = false;
+  if ($form_state->getFormObject() instanceOf EntityFormInterface) {
+    $nid = $form_state->getformObject()->getEntity()->id();
+  }
+  if(!$nid) {
+    $nids = \Drupal::entityQuery('node')
+      ->condition('type', 'approval_codes_bundle')
+      ->condition('field_code', $field_code)
+      ->execute();
+    if (count($nids)) {
+      $form_state->setErrorByName('field_code', t("Code already exists"));
+    }
+  }
+}
+

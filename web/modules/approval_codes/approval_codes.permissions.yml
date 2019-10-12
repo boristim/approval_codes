@@ -1,0 +1,5 @@
+administer approval_codes configuration:
+  title: 'Administer approval_codes configuration'
+  description: 'Optional description.'
+  restrict access: true
+
